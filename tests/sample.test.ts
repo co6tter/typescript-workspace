@@ -1,4 +1,4 @@
-import { calc, gcd, makeNewArray, rev } from "@/sample";
+import { calc, factorial, gcd, makeNewArray, order, rev } from "@/sample";
 
 describe("sample", () => {
   test("should return 17 for index 0 when passing [3, 2, 1, 6, 5, 4]", () => {
@@ -43,5 +43,17 @@ describe("sample", () => {
 
   test("should return 0b11010010 when passing 0b01001011", () => {
     expect(rev(0b01001011)).toBe(0b11010010);
+  });
+
+  test("should return 1 when passing 1", () => {
+    expect(factorial(1)).toBe(1);
+  });
+
+  test("should return 24 when passing 4", () => {
+    expect(factorial(4)).toBe(24);
+  });
+
+  test("should return [8, 4, 9, 2, 10, 5, 11, 1, 12, 6, 13, 3, 14, 7] when passing 1", () => {
+    expect(order(1)).toEqual([8, 4, 9, 2, 10, 5, 11, 1, 12, 6, 13, 3, 14, 7]);
   });
 });
