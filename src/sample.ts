@@ -2,7 +2,7 @@
  * 要素数2以上の整数型の配列をとり、要素を合計していく新しい配列を作成
  *
  * @param ins - number array
- * @returns - number array
+ * @returns number array
  */
 export const makeNewArray = (ins: number[]) => {
   const outs: number[] = [];
@@ -12,7 +12,6 @@ export const makeNewArray = (ins: number[]) => {
     tail = outs[outs.length - 1];
     outs.push(tail + ins[i]);
   }
-  console.log(outs);
   return outs;
 };
 
@@ -21,7 +20,7 @@ export const makeNewArray = (ins: number[]) => {
  *
  * @param num1 - number
  * @param num2 - number
- * @returns - number
+ * @returns number
  */
 export const gcd = (num1: number, num2: number) => {
   let x = num1;
@@ -34,4 +33,31 @@ export const gcd = (num1: number, num2: number) => {
     }
   }
   return x;
+};
+
+/**
+ * √(x^2 + y^2)の計算結果を返す
+ *
+ * @param x - number
+ * @param y - number
+ * @returns number
+ */
+export const calc = (x: number, y: number) => {
+  return (x ** 2 + y ** 2) ** 0.5;
+};
+
+/**
+ * 8ビット型を受け取りビットの並びを逆にした値を返す
+ *
+ * @param byte - number
+ * @returns number
+ */
+export const rev = (byte: number) => {
+  let rbyte = byte;
+  let r = 0b00000000;
+  for (let i = 0; i < 8; i++) {
+    r = (r << 1) | (rbyte & 0b00000001);
+    rbyte = rbyte >> 1;
+  }
+  return r;
 };

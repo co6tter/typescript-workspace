@@ -1,4 +1,4 @@
-import { gcd, makeNewArray } from "@/sample";
+import { calc, gcd, makeNewArray, rev } from "@/sample";
 
 describe("sample", () => {
   test("should return 17 for index 0 when passing [3, 2, 1, 6, 5, 4]", () => {
@@ -29,11 +29,19 @@ describe("sample", () => {
     expect(gcd(36, 60)).toBe(12);
   });
 
-  test("should return 12 when passing 60 and 12", () => {
+  test("should return 12 when passing 60 and 36", () => {
     expect(gcd(60, 36)).toBe(12);
   });
 
   test("should return 60 when passing 60 and 60", () => {
     expect(gcd(60, 60)).toBe(60);
+  });
+
+  test("should return 2.8284271247461903 when passing 2 and 2", () => {
+    expect(calc(2, 2)).toBe(2.8284271247461903);
+  });
+
+  test("should return 0b11010010 when passing 0b01001011", () => {
+    expect(rev(0b01001011)).toBe(0b11010010);
   });
 });
