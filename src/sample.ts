@@ -61,3 +61,44 @@ export const rev = (byte: number) => {
   }
   return r;
 };
+
+/**
+ * 非負の整数をとり、その階乗を返す
+ *
+ * @param n - number
+ * @returns number
+ */
+export const factorial = (n: number): number => {
+  if (n === 0) {
+    return 1;
+  }
+  return n * factorial(n - 1);
+};
+
+/**
+ * 引数で指定した節を根とする部分木をたどりながら、全ての節番号を返す
+ *
+ * @param n - number
+ * @returns number array
+ */
+export const order = (n: number) => {
+  const result: number[] = [];
+  const tree = [[2, 3], [4, 5], [6, 7], [8, 9], [10, 11], [12, 13], [14], [], [], [], [], [], [], []];
+
+  const traverse = (n: number) => {
+    const _n = n - 1;
+    if (tree[_n].length === 2) {
+      traverse(tree[_n][0]);
+      result.push(n);
+      traverse(tree[_n][1]);
+    } else if (tree[_n].length === 1) {
+      traverse(tree[_n][0]);
+      result.push(n);
+    } else {
+      result.push(n);
+    }
+  };
+
+  traverse(n);
+  return result;
+};
