@@ -102,3 +102,56 @@ export const order = (n: number) => {
   traverse(n);
   return result;
 };
+
+/**
+ * 値がnである要素をn番目に格納することで昇順の整列を行う
+ *
+ * @param nums - number array
+ * @returns number array
+ */
+export const binSort = (nums: number[]) => {
+  const bins = [];
+  for (let i = 0; i < nums.length; i++) {
+    bins[nums[i]] = nums[i];
+  }
+  return bins;
+};
+
+/**
+ * 要素番号が同じ要素の文字同士が一致する要素の組みの個数 ÷ s1の要素数を返す
+ *
+ * @param s1 - string array
+ * @param s2 - string array
+ * @returns number
+ */
+export const simRatio = (s1: string[], s2: string[]) => {
+  let cnt = 0;
+  if (s1.length !== s2.length) {
+    return -1;
+  }
+  for (let i = 0; i < s1.length; i++) {
+    if (s1[i] === s2[i]) {
+      cnt++;
+    }
+  }
+  return cnt / s1.length;
+};
+
+/**
+ * 昇順に整列済みの配列を基に、配列を特徴づける5つの値を返す
+ *
+ * @param sortedData - number array
+ * @returns number array
+ */
+export const summarize = (sortedData: number[]) => {
+  const findRank = (sortedData: number[], p: number) => {
+    const i = Math.ceil(p * (sortedData.length - 1));
+    return sortedData[i];
+  };
+  const rankData = [];
+  const p = [0, 0.25, 0.5, 0.75, 1];
+  for (let i = 0; i < p.length; i++) {
+    rankData.push(findRank(sortedData, p[i]));
+  }
+  return rankData;
+};

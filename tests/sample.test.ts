@@ -1,4 +1,4 @@
-import { calc, factorial, gcd, makeNewArray, order, rev } from "@/sample";
+import { binSort, calc, factorial, gcd, makeNewArray, order, rev, simRatio, summarize } from "@/sample";
 
 describe("sample", () => {
   test("should return 17 for index 0 when passing [3, 2, 1, 6, 5, 4]", () => {
@@ -55,5 +55,29 @@ describe("sample", () => {
 
   test("should return [8, 4, 9, 2, 10, 5, 11, 1, 12, 6, 13, 3, 14, 7] when passing 1", () => {
     expect(order(1)).toEqual([8, 4, 9, 2, 10, 5, 11, 1, 12, 6, 13, 3, 14, 7]);
+  });
+
+  test("should return [0, 1, 2, 3, 4, 5] when passing [2, 3, 1, 4, 5, 0]", () => {
+    expect(binSort([2, 3, 1, 4, 5, 0])).toEqual([0, 1, 2, 3, 4, 5]);
+  });
+
+  test("should return 1 when passing ['a', 'p', 'p', 'l', 'e'] and ['a', 'p', 'p', 'l', 'e']", () => {
+    expect(simRatio(["a", "p", "p", "l", "e"], ["a", "p", "p", "l", "e"])).toBe(1);
+  });
+
+  test("should return 0.4 when passing ['a', 'p', 'p', 'l', 'e'] and ['a', 'p', 'r', 'i', 'l']", () => {
+    expect(simRatio(["a", "p", "p", "l", "e"], ["a", "p", "r", "i", "l"])).toBe(0.4);
+  });
+
+  test("should return 0 when passing ['a', 'p', 'p', 'l', 'e'] and ['m', 'e', 'l', 'o', 'n']", () => {
+    expect(simRatio(["a", "p", "p", "l", "e"], ["m", "e", "l", "o", "n"])).toBe(0);
+  });
+
+  test("should return -1 when passing ['a', 'p', 'p', 'l', 'e'] and ['p', 'e', 'n']", () => {
+    expect(simRatio(["a", "p", "p", "l", "e"], ["p", "e", "n"])).toBe(-1);
+  });
+
+  test("should return [0.1, 0.4, 0.6, 0.8, 1] when passing [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]", () => {
+    expect(summarize([0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1])).toEqual([0.1, 0.4, 0.6, 0.8, 1]);
   });
 });
