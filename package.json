@@ -14,15 +14,15 @@
   "license": "ISC",
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
-    "lefthook": "^1.11.0",
+    "lefthook": "^1.11.3",
     "ts-node": "^10.9.2",
     "ts-node-dev": "^2.0.0",
-    "typescript": "^5.7.3",
-    "vitest": "^3.0.6"
+    "typescript": "^5.8.2",
+    "vitest": "^3.0.9"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.758.0",
     "@aws-sdk/s3-request-presigner": "^3.758.0",
-    "axios": "^1.8.3"
+    "axios": "^1.8.4"
   }
 }

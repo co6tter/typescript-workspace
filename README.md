@@ -20,5 +20,5 @@ ts-node --esm src/index.ts
 下記で一応実行はできた。
 
 ```bash
-node --loader ts-node/esm src/aws-sdk-sample.ts
+node --loader ts-node/esm src/index.ts
 ```
