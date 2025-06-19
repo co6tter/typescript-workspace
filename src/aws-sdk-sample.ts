@@ -7,8 +7,8 @@ import {
   DeleteObjectCommand,
   GetObjectCommand,
   PutObjectCommand,
-  S3Client,
   paginateListObjectsV2,
+  S3Client,
 } from "@aws-sdk/client-s3";
 
 export async function main() {
@@ -77,6 +77,7 @@ export async function main() {
 // Call a function if this file was run directly. This allows the file
 // to be runnable without running on import.
 import { fileURLToPath } from "node:url";
+
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   main();
 }
